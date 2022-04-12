@@ -2,6 +2,6 @@
   <p>123</p>
 </template>
 
-<script setup lang="ts" name="App"></script>
+<script setup lang="ts"></script>
 
 <style lang="scss"></style>
