@@ -8,7 +8,7 @@ module.exports = (rootPath) => {
         type: 'list',
         name: 'path',
         message: '请选择页面创建目录',
-        choices: getFolder('src/pages')
+        choices: getFolder('src/views')
       },
       {
         type: 'input',
@@ -32,6 +32,9 @@ module.exports = (rootPath) => {
           data: {
             componentName: `${data.name}`
           }
+        },
+        {
+          type: 'addRoute'
         }
       ];
       return actions;

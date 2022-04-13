@@ -28,11 +28,14 @@ module.exports = (rootPath) => {
         {
           type: 'add',
           path: `${rootPath}/${data.path}/{{camelCase name}}/index.ts`,
-          templateFile: 'plop/store/index.hbs'
+          templateFile: `${rootPath}/plop/store/index.hbs`
         },
         {
           type: 'add',
           path: `${rootPath}/${data.path}/{{camelCase name}}/types.ts`
+        },
+        {
+          type: 'registerStore'
         }
       ];
       return actions;

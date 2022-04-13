@@ -14,7 +14,7 @@ module.exports = (rootPath) => {
         type: 'list',
         name: 'path',
         message: '请选择组件创建目录',
-        choices: getFolder('src/pages'),
+        choices: getFolder('src/views'),
         when: (answers) => {
           return !answers.isGlobal;
         }
@@ -35,9 +35,9 @@ module.exports = (rootPath) => {
     actions: (data) => {
       let path = '';
       if (data.isGlobal) {
-        path = `${rootPath}/src/components/{{kebabCase name}}/index.vue`;
+        path = `${rootPath}/src/components/{{pascalCase name}}.vue`;
       } else {
-        path = `${rootPath}/${data.path}/components/{{kebabCase name}}/index.vue`;
+        path = `${rootPath}/${data.path}/components/{{pascalCase name}}.vue`;
       }
       const actions = [
         {

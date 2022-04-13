@@ -1,7 +1,7 @@
 <template>
-  <p>123</p>
+  <router-view />
 </template>
 
-<script setup lang="ts" name="App"></script>
+<script setup lang="ts"></script>
 
 <style lang="scss"></style>

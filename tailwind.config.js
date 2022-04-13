@@ -2,10 +2,7 @@ const IS_PROD = process.env.NODE_ENV !== 'development';
 const twBaseName = '';
 module.exports = {
   mode: IS_PROD ? '' : 'jit',
-  purge: {
-    content: ['./public/**/*.html', './src/**/*.{vue,js,ts,tsx}']
-  },
-  darkMode: false, // or 'media' or 'class'
+  content: ['./public/**/*.html', './src/**/*.{vue,js,ts,tsx}'],
   theme: {
     container: {
       center: true
