@@ -42,8 +42,7 @@ export async function setAppLang(lang: string) {
 }
 
 async function createI18nOptions(): Promise<I18nOptions> {
-  const storageLang = localStorage.getItem('lang') as unknown as string;
-  const lang = ['zh', 'en', 'ja'].includes(storageLang) ? storageLang : 'zh';
+  const { lang = 'zh' } = useBaseStore();
   const [localLang] = await getLocalLang(lang);
   return {
     legacy: false,

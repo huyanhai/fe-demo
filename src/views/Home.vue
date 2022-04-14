@@ -13,12 +13,18 @@
         {{ item.text }}
       </button>
     </div>
+    <a
+      class="tw-text-center tw-text-cyan-700 tw-mt-10"
+      @click="$router.push('/404')"
+    >
+      404
+    </a>
   </div>
 </template>
 
 <script setup lang="ts">
-import { setAppLang } from '@/locales';
 import { ref } from 'vue';
+import { setAppLang } from '@/locales';
 
 const setLang = (lang: string) => {
   setAppLang(lang);

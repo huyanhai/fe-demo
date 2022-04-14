@@ -7,10 +7,10 @@ import { i18n, setAppLang } from '@/locales';
 // 页面进度条
 function setProgress(router: Router) {
   const { NProgressStart, NProgressDone } = useNProgress();
-  router.beforeEach(async () => {
+  router.beforeEach(() => {
     NProgressStart();
   });
-  router.afterEach(async () => {
+  router.afterEach(() => {
     NProgressDone();
   });
 }
@@ -29,6 +29,8 @@ function setTitle(router: Router) {
 function setLang(router: Router) {
   router.beforeEach(async (from) => {
     const { lang } = from.query;
+    console.log('lang', lang);
+
     if (lang) await setAppLang(lang as string);
   });
 }
