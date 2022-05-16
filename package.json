@@ -1,22 +1,22 @@
 {
-  "name": "fe-demo",
+  "name": "base-templates",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint --fix ./src --ext .vue,.js,.ts"
+    "lint": "eslint --fix ./src --ext .js,.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huyanhai/fe-demo.git"
+    "url": "git+https://github.com/huyanhai/base-templates.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/huyanhai/fe-demo/issues"
+    "url": "https://github.com/huyanhai/base-templates/issues"
   },
-  "homepage": "https://github.com/huyanhai/fe-demo#readme",
+  "homepage": "https://github.com/huyanhai/base-templates#readme",
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
@@ -25,7 +25,6 @@
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.6.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.2"
