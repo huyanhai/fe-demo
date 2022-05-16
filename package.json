@@ -34,7 +34,7 @@
     "*.{less,scss}": [
       "stylelint --config  ./.stylelintrc --fix"
     ],
-    "*.{ts,js,vue}": [
+    "*.{ts,js}": [
       "npm run lint",
       "prettier --write"
     ]
