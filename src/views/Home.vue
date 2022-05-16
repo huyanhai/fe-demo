@@ -13,12 +13,6 @@
         {{ item.text }}
       </button>
     </div>
-    <a
-      class="tw-text-center tw-text-cyan-700 tw-mt-10"
-      @click="$router.push('/404')"
-    >
-      404
-    </a>
   </div>
 </template>
 

@@ -23,12 +23,6 @@ module.exports = (plop) => {
       name
     )}';\n// import here`;
     writeTplFile(indexPath, importTpl, '// import here');
-    // if (!existsSync(indexPath)) {
-    //   throw Error(`${indexPath} is not exist!`);
-    // }
-    // let fileCtx = readFileSync(indexPath, 'utf-8');
-    // fileCtx = fileCtx.replaceAll(`// import here`, importTpl);
-    // writeFileSync(indexPath, fileCtx, 'utf-8');
   });
 
   plop.setActionType('addRoute', (answers) => {
@@ -44,12 +38,5 @@ module.exports = (plop) => {
     )}.vue')
   } // add here`;
     writeTplFile(indexPath, addTpl, ' // add here');
-
-    // if (!existsSync(indexPath)) {
-    //   throw Error(`${indexPath} is not exist!`);
-    // }
-    // let fileCtx = readFileSync(indexPath, 'utf-8');
-    // fileCtx = fileCtx.replaceAll(` // add here`, addTpl);
-    // writeFileSync(indexPath, fileCtx, 'utf-8');
   });
 };
