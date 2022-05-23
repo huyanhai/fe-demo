@@ -17,7 +17,7 @@ pnpm [install | remove] <package_name> -w
 ## 指定 packages 依赖管理
 
 ```
-pnpm [install | remove] <package_name> --filter @zw-admin/<workspace_name>
+pnpm [install | remove] <package_name> --filter @<packages_name>/<workspace_name>
 ```
 
 ## 添加项目目录
