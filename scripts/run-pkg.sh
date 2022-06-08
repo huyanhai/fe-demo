@@ -8,5 +8,3 @@ if [ "$WORKSPACE_NAME" == "" ] || [ "$COMMAND_NAME" == "" ]; then
 fi;
 
 pnpm run -C packages/$WORKSPACE_NAME $COMMAND_NAME
-
-exit(1)
