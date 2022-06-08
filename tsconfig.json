@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@zw-admin/*": ["packages/*"]
+      "base": ["packages/*"]
     }
   },
   "include": ["packages", "typings"],
