@@ -9,7 +9,7 @@ DIR_PATH=$(pwd)
 re="[[:space:]]+"
 
 if [ "$#" -ne 1 ] || [[ $NAME =~ $re ]] || [ "$NAME" == "" ]; then
-  echo "Usage: pnpm gc-pkg \${name} with no space"
+  echo "Usage: pnpm run gen \${name} with no space"
   exit 1
 fi
 
