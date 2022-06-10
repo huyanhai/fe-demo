@@ -8,3 +8,4 @@ devops-notification
 *.log
 .history
 dist
+pnpm-lock.yaml
