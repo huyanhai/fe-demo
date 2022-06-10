@@ -2,4 +2,3 @@ node_modules
 dist
 commitlint.config.js
 .eslintrc
-packages/iam-jssdk/example/*
