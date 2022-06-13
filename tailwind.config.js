@@ -9,7 +9,7 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        [`${twBaseName}-base`]: ['12px', { lineHeight: 0 }]
+        [`${twBaseName}base`]: ['12px', { lineHeight: 0 }]
       }
     }
   },

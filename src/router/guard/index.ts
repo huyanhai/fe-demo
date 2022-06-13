@@ -17,7 +17,7 @@ function setProgress(router: Router) {
 
 // 页面标题
 function setTitle(router: Router) {
-  router.beforeEach(async (to) => {
+  router.afterEach(async (to) => {
     const { title } = to.meta;
     const { t } = i18n.global;
     if (title) {
@@ -29,8 +29,6 @@ function setTitle(router: Router) {
 function setLang(router: Router) {
   router.beforeEach(async (from) => {
     const { lang } = from.query;
-    console.log('lang', lang);
-
     if (lang) await setAppLang(lang as string);
   });
 }
