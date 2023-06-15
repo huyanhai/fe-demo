@@ -12,10 +12,10 @@ import 'tailwindcss/tailwind.css';
 
 async function bootstrap() {
   const app = createApp(App);
+  await setupI18n(app);
 
   setupRoute(app);
   setupPinia(app);
-  await setupI18n(app);
   setupRouterGuard(router);
   setupNProgress();
 
