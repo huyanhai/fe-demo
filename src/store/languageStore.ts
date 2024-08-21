@@ -1,9 +1,9 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 export enum LanguageType {
-  zh = "zh",
-  en = "en",
-  ja = "ja",
+  zh = 'zh',
+  en = 'en',
+  ja = 'ja'
 }
 
 interface BearState {
@@ -13,5 +13,5 @@ interface BearState {
 
 export const useLanguage = create<BearState>((set) => ({
   language: LanguageType.zh,
-  changeLanguage: (language) => set(() => ({ language: language })),
+  changeLanguage: (language) => set(() => ({ language: language }))
 }));

@@ -5,6 +5,9 @@ import { useLanguage } from "@/store/languageStore";
 
 import RouteTable from "./router";
 
+console.log(test123);
+
+
 const App = () => {
   const { i18n } = useTranslation();
   const { language } = useLanguage();

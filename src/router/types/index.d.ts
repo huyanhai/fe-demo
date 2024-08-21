@@ -1,8 +1,8 @@
-import type LazyExoticComponent from "react";
+import type LazyExoticComponent from 'react';
 
 export interface ISyncRoute {
   path: string;
-  component: LazyExoticComponent<any>;
+  component: LazyExoticComponent<unknown>;
   meta: {
     title?: string;
     auth?: boolean;
