@@ -1,4 +1,4 @@
-import { Link, useOutlet, Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
 const Index = () => {
   return (
