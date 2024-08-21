@@ -11,7 +11,6 @@ export default [
   {
     languageOptions: {
       ecmaVersion: 'latest',
-      sourceType: 'script',
       // 全局配置,识别浏览器全局变量,如document,window等
       globals: {
         ...globals.browser

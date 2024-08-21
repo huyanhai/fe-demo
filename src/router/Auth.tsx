@@ -1,6 +1,6 @@
 import { useLocation, Navigate } from 'react-router-dom';
 import { ISyncRoute } from './types';
-import type { ReactDOM } from 'react';
+import type { ReactNode } from 'react';
 
 import { routes } from './routes';
 
@@ -20,7 +20,7 @@ const searchRoute = (path: string, routes: ISyncRoute[]): ISyncRoute => {
   return route;
 };
 
-const AuthRouter = (props: { children: ReactDOM }) => {
+const AuthRouter = (props: { children: ReactNode }): ReactNode => {
   const { pathname } = useLocation();
 
   const route = searchRoute(pathname, routes);

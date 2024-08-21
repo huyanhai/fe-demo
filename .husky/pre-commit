@@ -1,4 +1,5 @@
 #!/bin/sh
+# 提交之前对文件进行检测
 . "$(dirname "$0")/_/husky.sh"
 
 npx lint-staged

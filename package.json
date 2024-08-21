@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --fix ./src/**/*[.js,.ts,.tsx]"
+    "lint": "Diff=$(git diff --diff-filter=d --cached --name-only -- ./src/**/*[.js,.ts,.tsx]) && eslint --fix $Diff"
   },
   "dependencies": {
     "i18next": "^23.14.0",

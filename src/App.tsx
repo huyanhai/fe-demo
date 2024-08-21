@@ -1,12 +1,9 @@
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { useLanguage } from "@/store/languageStore";
+import { useLanguage } from '@/store/languageStore';
 
-import RouteTable from "./router";
-
-console.log(test123);
-
+import RouteTable from './router';
 
 const App = () => {
   const { i18n } = useTranslation();
