@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-require-imports */
 const { getFolder } = require('../utils/index.js');
 
 module.exports = (rootPath) => {
