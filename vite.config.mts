@@ -10,7 +10,7 @@ export default ({ mode }) => {
   );
   // https://vitejs.dev/config/
   return defineConfig({
-    plugins: [vue(), babel()],
+    plugins: [vue(), babel({ babelHelpers: 'bundled' })],
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src')
