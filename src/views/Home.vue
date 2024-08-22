@@ -20,6 +20,19 @@
 import { ref } from 'vue';
 import { setAppLang } from '@/locales';
 
+import { useRequest } from 'alova/client';
+import { download } from '@/api';
+
+const { onError, onComplete } = useRequest((data) => download(data));
+
+onError((data) => {
+  console.log('error', data);
+});
+
+onComplete((data) => {
+  console.log('onComplete', data);
+});
+
 const setLang = (lang: string) => {
   setAppLang(lang);
 };

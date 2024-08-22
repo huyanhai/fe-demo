@@ -1,5 +1,5 @@
-import { request } from '@/plugins/axios';
+import request from '@/plugins/request';
 
-export function download() {
-  return request.post('');
+export function download(params: undefined) {
+  return request.Get('/api/download', { params });
 }
