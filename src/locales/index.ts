@@ -1,4 +1,4 @@
-import type { App } from 'vue';
+import type { App, Ref } from 'vue';
 import type { I18nOptions } from 'vue-i18n';
 
 import { createI18n } from 'vue-i18n';
@@ -8,7 +8,9 @@ import { useBaseStore } from '@/store';
 
 export let i18n: ReturnType<typeof createI18n>;
 
-export async function getLocalLang(lang: string): Promise<any[]> {
+export async function getLocalLang(
+  lang: string
+): Promise<Record<string, unknown>[]> {
   let defaultLocal = import.meta.glob(`./lang/zh/*.ts`);
   switch (lang) {
     case 'en':
@@ -25,8 +27,10 @@ export async function getLocalLang(lang: string): Promise<any[]> {
 
   for (const item in defaultLocal) {
     const fileName = item.replace(`./lang/${lang}/`, '').replace('.ts', '');
-    const langObject = await defaultLocal[item]?.();
-    localLang[snakeCase(fileName)] = langObject.default;
+    const langObject = (await defaultLocal[item]?.()) as {
+      default: Record<string, unknown>;
+    };
+    localLang[snakeCase(fileName)] = langObject?.default;
   }
 
   return [localLang];
@@ -37,7 +41,7 @@ export async function setAppLang(lang: string) {
   const [localLang] = await getLocalLang(lang);
   const { setLang } = useBaseStore();
   i18n.global.setLocaleMessage(lang, localLang);
-  (i18n.global.locale as unknown as any).value = lang;
+  (i18n.global.locale as Ref).value = lang;
   setLang(lang);
 }
 

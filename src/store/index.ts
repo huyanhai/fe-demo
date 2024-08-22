@@ -1,6 +1,6 @@
 import type { App } from 'vue';
 import { createPinia } from 'pinia';
-import { persistPlugin } from './plugins/persist';
+import persistPlugin from 'pinia-plugin-persistedstate';
 
 export * from './modules/base';
 // import here

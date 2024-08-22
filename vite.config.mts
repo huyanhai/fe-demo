@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
+import babel from '@rollup/plugin-babel';
 
 export default ({ mode }) => {
   const { VITE_APP_BASE_API, VITE_APP_BASE_HOST } = loadEnv(
@@ -9,7 +10,7 @@ export default ({ mode }) => {
   );
   // https://vitejs.dev/config/
   return defineConfig({
-    plugins: [vue()],
+    plugins: [vue(), babel()],
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src')
@@ -27,6 +28,28 @@ export default ({ mode }) => {
           changeOrigin: true,
           rewrite: (path) =>
             path.replace(new RegExp(`^${VITE_APP_BASE_API}`), '')
+        }
+      }
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          entryFileNames: 'js/[name]-[hash].js',
+          chunkFileNames: 'js/[name]-[hash].js',
+          assetFileNames(chunkInfo) {
+            if (chunkInfo.name?.endsWith('.css')) {
+              return 'css/[name]-[hash].[ext]';
+            }
+            return 'assets/[name]-[hash].[ext]';
+          },
+          manualChunks(id) {
+            if (id.includes('react')) {
+              return 'react';
+            }
+            return 'other';
+          },
+          // 小于5m尝试合并
+          experimentalMinChunkSize: 5 * 1024
         }
       }
     }

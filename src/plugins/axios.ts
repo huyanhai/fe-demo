@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let base_url = '';
+const base_url = '';
 
 export const request = axios.create({
   baseURL: base_url,

@@ -3,6 +3,7 @@ import type { Router } from 'vue-router';
 import { useTitle } from '@vueuse/core';
 import { useNProgress } from '@/plugins/nprogress';
 import { i18n } from '@/locales';
+import { VueI18nTranslation } from 'vue-i18n';
 
 // 页面进度条
 function setProgress(router: Router) {
@@ -21,7 +22,7 @@ function setTitle(router: Router) {
     const { title } = to.meta;
     const { t } = i18n.global;
     if (title) {
-      useTitle().value = (t as any)(title as never);
+      useTitle().value = (t as VueI18nTranslation)(title as never);
     }
   });
 }
@@ -30,7 +31,9 @@ function setTitle(router: Router) {
 function initTitle(router: Router) {
   const title = router.currentRoute.value.meta.title;
   const { t } = i18n.global;
-  title && (useTitle().value = (t as any)(title as never));
+  if (title) {
+    useTitle().value = (t as VueI18nTranslation)(title as never);
+  }
 }
 
 export function setupRouterGuard(router: Router) {

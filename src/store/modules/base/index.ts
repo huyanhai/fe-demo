@@ -1,8 +1,13 @@
 import { defineStore } from 'pinia';
 import piniaStore from '@/store/index';
 
+interface BaseState {
+  lang: string;
+  test: string;
+}
+
 export const baseStore = defineStore('base', {
-  state: () => ({
+  state: (): BaseState => ({
     lang: 'zh',
     test: '123'
   }),

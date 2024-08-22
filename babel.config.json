@@ -1,0 +1,13 @@
+{
+  // 大于500k后有提示，https://babel.dev/docs/options#compact
+  "compact": false,
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "corejs": "3.22"
+      }
+    ]
+  ]
+}
