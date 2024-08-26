@@ -16,7 +16,13 @@ export default [
       'vue/multi-word-component-names': 'off'
     }
   },
-  { files: ['src/**/*.{js,mjs,cjs,ts,vue}'], rules: { 'no-undef': 'error' } },
+  {
+    files: ['src/**/*.{js,mjs,cjs,ts,vue}'],
+    rules: {
+      'no-undef': 'error',
+      complexity: ['error', 10] // 圈复杂度
+    }
+  },
   { languageOptions: { globals: globals.browser } },
   {
     ignores: [
