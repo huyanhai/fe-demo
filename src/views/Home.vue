@@ -13,6 +13,7 @@
         {{ item.text }}
       </button>
     </div>
+    <button @click="showMessage('123')">showMessage</button>
   </div>
 </template>
 
@@ -22,6 +23,8 @@ import { setAppLang } from '@/locales';
 
 import { useRequest } from 'alova/client';
 import { download } from '@/api';
+
+import showMessage from '@/components/message-box';
 
 const { onError, onComplete } = useRequest((data) => download(data));
 
@@ -54,3 +57,4 @@ const langList = ref([
 </script>
 
 <style lang="scss"></style>
+../components/message-box/test

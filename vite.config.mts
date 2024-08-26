@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 import babel from '@rollup/plugin-babel';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 
 export default ({ mode }) => {
   const { VITE_APP_BASE_API, VITE_APP_BASE_HOST } = loadEnv(
@@ -10,7 +11,7 @@ export default ({ mode }) => {
   );
   // https://vitejs.dev/config/
   return defineConfig({
-    plugins: [vue(), babel({ babelHelpers: 'bundled' })],
+    plugins: [vue(), vueJsx(), babel({ babelHelpers: 'bundled' })],
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src')

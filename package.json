@@ -29,6 +29,7 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@types/node": "^22.4.2",
     "@vitejs/plugin-vue": "^5.1.2",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
     "autoprefixer": "^10.4.20",
     "change-case": "^5.4.4",
     "eslint": "^9.9.0",
