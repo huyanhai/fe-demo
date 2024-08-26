@@ -22,6 +22,7 @@ export default [
       // 优先级大于typescript-eslint
       // 'no-unused-vars': 'warn',
       'no-undef': 'error',
+      complexity: ['error', 10], // 圈复杂度
 
       // ts文件配置
       '@typescript-eslint/no-unused-vars': 'warn'
