@@ -16,6 +16,10 @@ import MessageBox from './index.vue';
 //   }
 // });
 
+/**
+ * 显示消息框
+ * @param {String} message 消息内容
+ */
 export default (message: string) => {
   const div = document.createElement('div');
 
