@@ -10,7 +10,7 @@
   "scripts": {
     "prepare": "husky install",
     "rm": "rm -rf node_modules **/*/node_modules",
-    "lint": "Diff=$(git diff --diff-filter=d --cached --name-only -- src/**/*[.js,.ts,.tsx,.vue]) && eslint --fix $Diff",
+    "lint": "Diff=$(git diff --diff-filter=d --cached --name-only -- '*.js' '*.ts' '*.tsx' '*.vue') && eslint --fix $Diff",
     "gen": "bash scripts/gen-pkg.sh",
     "clean:dist": "pnpm run -r --parallel clean:dist",
     "build": "pnpm run -r --parallel build",

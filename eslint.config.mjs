@@ -8,7 +8,7 @@ export default [
   ...typescriptLint.configs.recommended,
   eslintPluginPrettierRecommended,
   {
-    files: ['src/**/*.{js,mjs,cjs,ts}'],
+    files: ['**/*.js', '**/*.mjs', '**/*.cjs', '**/*.ts'],
     rules: {
       'no-undef': 'error',
       complexity: ['error', 10] // 圈复杂度
