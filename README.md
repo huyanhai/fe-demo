@@ -30,6 +30,8 @@ pnpm gen <workspace_name>
 
 ```
 pnpm run -C packages/<workspace_name> <command_name> 或者 pnpm run pkg <workspace_name> <command_name>
+
+pnpm run pkg demo test
 ```
 
 ## 开发规范
