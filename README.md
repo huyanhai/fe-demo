@@ -14,6 +14,12 @@ pnpm init
 pnpm [add | remove] <package_name> -w
 ```
 
+## 全局安装本地依赖
+
+```
+pnpm add @<packages_name>/<workspace_name> -w
+```
+
 ## 指定 packages 依赖管理
 
 ```
