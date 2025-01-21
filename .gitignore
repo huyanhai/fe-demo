@@ -7,3 +7,4 @@ devops-notification
 *.lock
 *.log
 pnpm-lock.yaml
+dist

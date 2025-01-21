@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios';
 
 const base_url = '';
 
@@ -8,7 +8,7 @@ export const request = axios.create({
 });
 
 export function setupAxios() {
-  request.interceptors.request.use((config) => {
+  request.interceptors.request.use((config: AxiosRequestConfig) => {
     return {
       ...config,
       headers: {
@@ -18,13 +18,13 @@ export function setupAxios() {
         ...config.params,
         _t: Date.now()
       }
-    };
+    } as InternalAxiosRequestConfig;
   });
 
   request.interceptors.response.use(
     (rawResponse) => {
       const { data } = rawResponse;
-      Promise.resolve(data);
+      return Promise.resolve(data);
     },
     (rawError) => {
       const { data } = rawError.response || {};

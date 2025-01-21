@@ -1,5 +1,5 @@
 import type { App, Ref } from 'vue';
-import type { I18nOptions } from 'vue-i18n';
+import type { I18nOptions, LocaleMessages, VueMessageType } from 'vue-i18n';
 
 import { createI18n } from 'vue-i18n';
 import { snakeCase } from 'change-case';
@@ -55,7 +55,7 @@ async function createI18nOptions(): Promise<I18nOptions> {
     locale: lang,
     fallbackLocale: 'zh',
     messages: {
-      [lang]: localLang
+      [lang]: localLang as LocaleMessages<VueMessageType>
     }
   };
 }

@@ -50,7 +50,11 @@ export default ({ mode }) => {
           },
           // 小于5m尝试合并
           experimentalMinChunkSize: 5 * 1024
-        }
+        },
+        external(source, importer, isResolved) {
+          console.log(source, importer, isResolved);
+          
+        },
       }
     }
   });
